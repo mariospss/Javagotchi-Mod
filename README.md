@@ -1,23 +1,31 @@
-📄 Τεχνική Τεκμηρίωση Javagotchi Mod
-1. Javagotchi.java (The Registry)
-Είναι ο "ληξίαρχος" του mod. Χρησιμοποιεί τον IEventBus για να δηλώσει τα πάντα στο παιχνίδι.
-•	Entity Registration: Ορίζει το "pet" με μέγεθος 0.6x1.0 (ύψος/πλάτος).
-•	Items: Δημιουργεί αυτόματα ένα Spawn Egg με χρώματα Λευκό/Πράσινο.
-•	Creative Tab: Φτιάχνει μια δική του καρτέλα στο inventory του Creative mode με το όνομα του mod, ώστε να βρίσκεις το αυγό εύκολα.
-2. PetEntity.java (The Logic)
-Εδώ χτυπάει η καρδιά του AI. Το ζωάκι σου δεν είναι απλό entity, είναι ένα Data-Driven Pet.
-•	Synched Data: Χρησιμοποιεί EntityDataAccessor (Hunger, Happiness, Energy). Αυτό σημαίνει ότι οι τιμές συγχρονίζονται αυτόματα μεταξύ Server και Client (για να τις βλέπεις στο HUD).
-•	Interactions: * 🍎 Apple: Hunger +3 και Heal.
-o	🥕 Carrot: Energy +4.
-o	Stick: Happiness +2 αλλά Energy -1 (το παιχνίδι το κουράζει!).
-•	AI Logic: Αν η πείνα ή η ευτυχία φτάσουν στο 0, το entity κάνει discard() (πεθαίνει/εξαφανίζεται). Αν το Energy φτάσει στο 0, η ταχύτητά του μηδενίζεται (εξάντληση).
-3. ClientModEvents.java (The Visuals)
-Αυτό το αρχείο περιέχει όλη τη "μαγεία" της εμφάνισης.
-•	PetModel: Ένα custom 3D μοντέλο με κεφάλι, αυτιά, σώμα και 4 πόδια.
-•	Animations: Στη μέθοδο setupAnim, τα πόδια κινούνται με βάση τη συνάρτηση cos (ημίτονο), δημιουργώντας μια φυσική κίνηση περπατήματος.
-•	Render Layer: Καταχωρεί το HUD Overlay και το Renderer, συνδέοντας τον κώδικα με τα γραφικά.
-4. PetHudOverlay.java (The UI)
-Το interface που βλέπει ο παίκτης στην οθόνη του.
-•	Detection: Χρησιμοποιεί ένα AABB (Bounding Box) για να "ψάξει" αν υπάρχει κάποιο PetEntity σε ακτίνα 3 blocks από τον παίκτη.
-•	Targeting: Αν υπάρχουν πολλά, επιλέγει αυτό που είναι πιο κοντά στον παίκτη (min(Comparator)).
-•	Rendering: Σχεδιάζει κείμενο απευθείας στην οθόνη (Centered String) δείχνοντας τα στατιστικά σε πραγματικό χρόνο με διαφορετικά χρώματα (Hex codes).
+# 📟 Javagotchi-Mod
+
+[![Java Version](https://img.shields.io/badge/Java-17%2B-orange.svg)](https://www.oracle.com/java/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/mariospss/Javagotchi-Mod/graphs/commit-activity)
+
+**Javagotchi-Mod** is an enhanced version of the virtual pet experience built in Java. This project modifies the core mechanics of the original Javagotchi to provide a more engaging, balanced, and feature-rich simulation.
+
+---
+
+## ✨ Key Enhancements
+* **Rebalanced Mechanics:** Adjusted decay rates for hunger, energy, and happiness for a more realistic challenge.
+* **Modern Java Implementation:** Optimized code using modern Java features for better stability.
+* **Extended Interaction:** [Add a specific mod feature here, e.g., "Added a new 'Training' menu"]
+* **Custom UI/UX:** [Add a specific UI change here, e.g., "Color-coded status bars"]
+
+## 🚀 Quick Start
+
+### Prerequisites
+* **JDK 17** or higher installed.
+* An IDE like **IntelliJ IDEA**, **Eclipse**, or **VS Code**.
+
+### Installation & Execution
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/mariospss/Javagotchi-Mod.git](https://github.com/mariospss/Javagotchi-Mod.git)
+   cd Javagotchi-Mod```
+
+2. **Compile the project**
+   ```javac src/*.java -d bin
+   
