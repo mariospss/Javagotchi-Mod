@@ -27,5 +27,8 @@
    cd Javagotchi-Mod```
 
 2. **Compile the project**
-   ```javac src/*.java -d bin
+   ```javac src/*.java -d bin```
    
+3. **Run the application**
+   ```java -cp bin Main```
+(Note: Replace Main with your actual entry point class name if different.)
