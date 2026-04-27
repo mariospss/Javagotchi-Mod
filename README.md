@@ -31,4 +31,4 @@
    
 3. **Run the application**
    ```java -cp bin Main```
-(Note: Replace Main with your actual entry point class name if different.)
+   (Note: Replace Main with your actual entry point class name if different.)
