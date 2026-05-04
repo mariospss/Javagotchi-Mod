@@ -33,6 +33,6 @@
    ```java -cp bin Main```
    (Note: Replace Main with your actual entry point class name if different.)
 
-*** Mod download 
+*** Mod download -> 
  You can download the mod and use it in minecraft via the link below:
   https://modrinth.com/mod/java-gotchi.
